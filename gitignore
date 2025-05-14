@@ -1,0 +1,9 @@
+# Environment variables
+.env
+
+# Node modules
+node_modules/
+
+# remove .env and node_modules if already move before adding in .gitignore
+# git rm --cached .env
+# git rm -r --cached node_modules/

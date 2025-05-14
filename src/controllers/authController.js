@@ -58,7 +58,6 @@ const login = async (req, res) => {
   }
 };
 
-
 // user login
 const signUp = async (req, res) => {
 
@@ -89,7 +88,6 @@ const signUp = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
-
 
 // user will store if otp is verified
 const otpVerirfication = async (req, res) => {

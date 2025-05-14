@@ -4,7 +4,7 @@ async function verifyOTPToken(payload) {
 
   try {
     const decoded = jwt.verify(payload?.token, process.env.JWT_SECRET);
-
+    
     if (decoded.otp == payload?.otp) {
       return { valid: true, decoded };
     }
