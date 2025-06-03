@@ -23,7 +23,11 @@ const skillSchema = new mongoose.Schema({
         required: true,
          unique: true,
     },
-
+     user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true, // ensure post is always tied to a user
+    },
     skills: [skill],
 
 }, {
