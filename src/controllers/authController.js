@@ -7,6 +7,7 @@ const { verifyOTPToken } = require('../libs/OtpVerification.js');
 
 // user login
 const login = async (req, res) => {
+
   const { username, password } = req.body;
 
   try {
@@ -69,9 +70,9 @@ const signUp = async (req, res) => {
     payload.password = hashedPassword;
     let to = payload.email;
     let subject = 'Your One-Time Password (OTP)';
-
     let otp = Math.floor(10000 + Math.random() * 90000);
     const response = await emailSender({ to, subject, otp });
+
     if (response?.messageId) {
 
       const user = new User(payload);
@@ -80,6 +81,7 @@ const signUp = async (req, res) => {
       plainUser.otp = otp;
       const token = jwtGenerator(plainUser, process.env.JWT_SECRET, '5m');
       res.status(201).json({ message: 'One-Time password shared at your register email', token });
+
     } else {
       res.status(201).json({ message: 'User created but email not send' });
     }

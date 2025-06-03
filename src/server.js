@@ -103,6 +103,9 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs, {
 // Routes
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/profile',require('./routes/profileRoutes.js'));
+app.use('/api/skill', require('./routes/skillRoutes.js'));
+app.use('/api', require('./routes/documentRoutes.js'));
 
 // MongoDB connection
 
