@@ -30,10 +30,10 @@ const profileSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
-      required: true, // ensure post is always tied to a user
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true, // ensure post is always tied to a user
     },
     profileImageUrl: {
         type: String,
@@ -60,7 +60,7 @@ user: {
         // unique: true,
     },
 
-    isActive: { type: Boolean, default: false },
+    isActive: { type: Boolean, default: true },
 }, {
     timestamps: true,
 });

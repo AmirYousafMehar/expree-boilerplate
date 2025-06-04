@@ -47,7 +47,7 @@ const aboutSchema = new mongoose.Schema({
       required: true, // ensure post is always tied to a user
     },
 
-    isActive: { type: Boolean, default: false },
+    isActive: { type: Boolean, default: true },
 }, {
     timestamps: true,
 });
